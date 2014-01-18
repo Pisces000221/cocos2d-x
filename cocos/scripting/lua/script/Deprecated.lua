@@ -1,7 +1,7 @@
 require "Cocos2d.lua"
---tip
-local function deprecatedTip(old_name,new_name)
-    print("\n********** \n"..old_name.." was deprecated please use ".. new_name .. " instead.\n**********")
+
+-- tip, this is only a declaration
+local function deprecatedTip()
 end
 
 
@@ -1097,3 +1097,7 @@ end
 rawset(CCEGLView,"sharedOpenGLView",CCEGLViewDeprecated.sharedOpenGLView)
 --functions of CCEGLView will be deprecated end
 
+-- the real tip function
+local function deprecatedTip(old_name,new_name)
+    print("\n********** \n"..old_name.." was deprecated please use ".. new_name .. " instead.\n**********")
+end
