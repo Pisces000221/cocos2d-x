@@ -220,6 +220,9 @@ public:
     
     /** Unschedule a script entry. */
     void unscheduleScriptEntry(unsigned int scheduleScriptEntryID);
+    
+    /** Pauses a script entry. */
+    void resumeScriptEntry(unsigned int scheduleScriptEntryID);
 
     /** Pauses the target.
      All scheduled selectors/update for a given target won't be 'ticked' until the target is resumed.
