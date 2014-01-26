@@ -689,6 +689,19 @@ void Scheduler::unscheduleScriptEntry(unsigned int scheduleScriptEntryID)
     }
 }
 
+void Scheduler::unscheduleScriptEntry(unsigned int scheduleScriptEntryID)
+{
+    for (ssize_t i = _scriptHandlerEntries.size() - 1; i >= 0; i--)
+    {
+        SchedulerScriptHandlerEntry* entry = _scriptHandlerEntries.at(i);
+        if (entry->getEntryId() == (int)scheduleScriptEntryID)
+        {
+            entry->markedForDeletion();
+            break;
+        }
+    }
+}
+
 void Scheduler::resumeTarget(Object *target)
 {
     CCASSERT(target != nullptr, "");
